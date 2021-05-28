@@ -138,10 +138,7 @@ class Party(DeactivableMixin, ModelSQL, ModelView, MultiValueMixin):
 
     def get_tax_identifier(self, name):
         types = self.tax_identifier_types()
-        print('[DEBUG10]')
-        print(types)
         for identifier in self.identifiers:
-            print(identifier.type)
             if identifier.type in types:
                 return identifier.id
 
